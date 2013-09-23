@@ -8,11 +8,30 @@
 </head>
 <body>
 
+<nav class="top-bar">
+  <ul class="title-area">
+    <li class="name"><h1><a href="/">AcmeSaaS</a></h1></li>
+    <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <ul class="right">
+      <% unless user_signed_in? %>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <li><%= link_to "Signup", new_user_registration_path %></li>
+      <% else %>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <% end %>
+    </ul>
+  </section>
+</nav>
+
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-
-<%= yield %>
+<div class="row panel">
+  <%= yield %>
+</div>
 
 </body>
 </html>
