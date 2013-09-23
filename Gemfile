@@ -34,3 +34,6 @@ group :test do
 end
 
 gem 'devise'
+
+gem 'zurb-foundation', '~> 4.0.0'
+gem 'compass-rails', '~> 2.0.alpha.0'
