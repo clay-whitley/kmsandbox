@@ -10,7 +10,7 @@
 
 <nav class="top-bar">
   <ul class="title-area">
-    <li class="name"><h1><a href="/">AcmeSaaS</a></h1></li>
+    <li class="name"><h1><a href="/">AcmeSandbox</a></h1></li>
     <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
   </ul>
 
@@ -26,8 +26,16 @@
   </section>
 </nav>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% unless flash.empty? %>
+  <center>
+    <% if notice %>
+      <a class="button success disabled"><div class="notice"><%= notice %></div></a>
+    <% end %>
+    <% if alert %>
+      <a class="button alert disabled"><div class="alert"><%= alert %></div></a>
+    <% end %>
+  </center>
+<% end %>
 
 <div class="row panel">
   <%= yield %>
