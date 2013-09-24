@@ -17,17 +17,20 @@ module CapybaraTraffic
         fill_in "Email", with: "test@test.com"
         fill_in "Password", with: "password"
         click_button "Sign in"
+        sleep 3
       end
     end
 
     def home
       visit('/')
+      sleep 3
     end
 
     def view_widget
       login
       visit('/widgets')
       page.first(:link, "Show").click
+      sleep 3
     end
 
     def create_widget
@@ -36,6 +39,7 @@ module CapybaraTraffic
       click_link "New Widget"
       fill_in "Name", with: "Dummy widget #{rand(500)}"
       click_button "Create Widget"
+      sleep 3
     end
 
     def destroy_widget
@@ -43,12 +47,14 @@ module CapybaraTraffic
       visit('/widgets')
       page.first(:link, "Destroy").click
       page.driver.browser.switch_to.alert.accept
+      sleep 3
     end
 
     def logout
       login
       visit('/widgets')
       click_link "Logout"
+      sleep 3
     end
   end
 end
