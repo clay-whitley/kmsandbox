@@ -1,6 +1,8 @@
 Kmsandbox::Application.routes.draw do
+  resources :widgets
+
   devise_for :users
-  root to: 'products#index'
+  root to: 'pages#home'
 
   resources :products
 
