@@ -22,3 +22,8 @@
 <br>
 
 <%= link_to 'New Widget', new_widget_path %>
+
+<script type="text/javascript">
+  _kmq.push(['identify', '<%= current_user.email %>']);
+  _kmq.push(['set', {'sign_in_count' : <%= current_user.sign_in_count %>}]);
+</script>

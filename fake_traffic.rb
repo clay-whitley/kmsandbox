@@ -39,7 +39,7 @@ module CapybaraTraffic
       click_link "New Widget"
       fill_in "Name", with: "Dummy widget #{rand(500)}"
       click_button "Create Widget"
-      sleep 3
+      sleep 5
     end
 
     def destroy_widget

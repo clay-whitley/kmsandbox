@@ -7,3 +7,7 @@
 
 <%= link_to 'Edit', edit_widget_path(@widget) %> |
 <%= link_to 'Back', widgets_path %>
+
+<script type="text/javascript">
+  _kmq.push(['record', 'Viewed Widget', {'WidgetID': <%= @widget.id %>}]);
+</script>
