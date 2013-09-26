@@ -11,6 +11,7 @@ class WidgetsController < ApplicationController
   # GET /widgets/1
   # GET /widgets/1.json
   def show
+    KM.record('Viewed Widget', {'ID' => params[:id]})
   end
 
   # GET /widgets/new
@@ -29,6 +30,7 @@ class WidgetsController < ApplicationController
 
     respond_to do |format|
       if @widget.save
+        KM.record('Created Widget', {'Name' => widget_params[:name]})
         format.html { redirect_to @widget, notice: 'Widget was successfully created.' }
         format.json { render action: 'show', status: :created, location: @widget }
       else

@@ -43,3 +43,5 @@ gem 'zurb-foundation', '~> 4.0.0'
 gem 'compass-rails', '~> 2.0.alpha.0'
 
 gem 'rails_12factor', group: :production
+
+gem 'km'
